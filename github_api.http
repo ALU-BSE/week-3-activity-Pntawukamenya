@@ -1,0 +1,31 @@
+GET https://api.github.com/users/octocat
+###
+
+POST https://api.github.com/user/repos
+Content-Type: application/json
+Authorization: Bearer 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
+Accept: application/vnd.github+json
+
+{
+  "name": "new-repo-name",
+  "description": "This is my new repository",
+  "private": false
+}
+###
+
+PUT https://api.github.com/repos/Pntawukamenya/new-repo-name/contents/file.txt
+Authorization: Bearer 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
+Accept: application/vnd.github+json
+Content-Type: application/json
+
+{
+  "message": "Update file.txt",
+  "content": "VGhpcyBpcyBhIHRlc3QgZmlsZSBjb250ZW50Lg==",  // base64-encoded content
+  "sha": "abc123exampleSHAvalue"
+}
+###
+
+GET https://api.github.com/repos/octocat/Hello-World
+Accept: application/vnd.github.v3+json
+
+###
